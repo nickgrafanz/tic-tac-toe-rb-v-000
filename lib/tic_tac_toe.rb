@@ -44,8 +44,7 @@ end
 def turn(board)
   puts "Where do you want to go? 1-9"
   user_input = gets.strip
-  input_to_index(user_input)
-  return = index
+  index = input_to_index(user_input)
   if position_taken?(board,index)==false && valid_move?(board,index) == true
     move(board,index,value)
   else turn(board)
