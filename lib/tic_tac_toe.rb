@@ -41,6 +41,25 @@ def valid_move?(board,index)
   end
 end
 
+def turn_count(board)
+  counter = 0
+  board.each do |space|
+    if space != " "
+      counter += 1
+    end
+  end
+  counter
+end
+
+def current_player(board)
+  counter = turn_count(board)
+  if counter % 2 == 0
+     "X"
+  else
+    "O"
+  end
+end
+
 def turn(board)
   puts "Where do you want to go? 1-9"
   user_input = gets.strip
@@ -48,7 +67,7 @@ def turn(board)
   if position_taken?(board,index) == false && valid_move?(board,index) == true
     move(board,index,value)
     display_board(board)
-  else 
+  else
     turn(board)
   end
 end
