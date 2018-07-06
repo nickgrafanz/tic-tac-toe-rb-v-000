@@ -65,6 +65,7 @@ def turn(board)
   user_input = gets.strip
   index = input_to_index(user_input)
   if position_taken?(board,index) == false && valid_move?(board,index) == true
+    value = current_player(board)
     move(board,index,value)
     display_board(board)
   else
