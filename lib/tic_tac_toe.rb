@@ -121,4 +121,5 @@ def play(board)
     puts "Congratulations Player O!"
   else
     puts "The game has ended in a draw"
+  end
 end
