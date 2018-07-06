@@ -36,7 +36,7 @@ end
 def valid_move?(board,index)
   if index.between?(0,8) && (board[index] == " " || board[index] == "")
     true
-  else 
+  else
     false
   end
 end
@@ -46,7 +46,7 @@ def turn(board)
   user_input = gets.strip
   input_to_index(user_input)
   return = index
-  if position_taken?(board,index) && valid_move?(board,index) == true
+  if position_taken?(board,index)==false && valid_move?(board,index) == true
     move(board,index,value)
   else turn(board)
   end
