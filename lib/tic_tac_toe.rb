@@ -100,3 +100,13 @@ def over? (board)
     return true
   end
 end
+
+def winner (board)
+  if won?(board) == false
+    return nil
+  end
+  if board[won?(board)[0]] == "X"
+    return "X"
+  else "O"
+  end
+end
