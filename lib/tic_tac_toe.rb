@@ -115,4 +115,10 @@ def play(board)
   until over?(board) == true
     turn(board)
   end
+  if winner(board) == "X"
+    puts "Congratulations Player X!"
+  elsif winner(board) == "O"
+    puts "Congratulations Player O!"
+  else
+    puts "The game has ended in a draw"
 end
