@@ -72,3 +72,15 @@ def turn(board)
     turn(board)
   end
 end
+
+def won? (board)
+  WIN_COMBINATIONS.each do |win_index|
+    board_position_1 = board[win_index[0]]
+    board_position_2 = board[win_index[1]]
+    board_position_3 = board[win_index[2]]
+    if board_position_1 == board_position_2 && board_position_2 == board_position_3 && position_taken?(board, win_index[0])
+      return win_index
+    end
+  end
+  false
+end
